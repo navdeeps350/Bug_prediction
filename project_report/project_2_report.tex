@@ -111,11 +111,13 @@ I did the data-preprocessing in two steps:
             \item number of Words in comments/number of Statements
         \end{enumerate}
     \end{enumerate}
-    The resulting csv of extracted, labelled feature vectors can be found in the repository at the following path: results\//feature\_vectors.csv.
+    The resulting csv of extracted, labelled feature vectors can be found in the repository at the following path: results\//feature\_vectors.csv. 
+    The code for this step can be found in the following file: extract\_feature\_vectors.py.
 
     \item The to create the labels for the buggy and non-buggy classes, 
-    I parsed the list of buggy classes provided to us in the resources\//modified\_classes folder 
+    I parsed the list of buggy classes provided to us in the resources\//modified\_classes path 
     and labelled all the classes present in the folder as 1 and others as 0 in the dataframe created in the last step by adding a \textit{buggy} column.
+    The code for this step can be found in the following file: label\_feature\_vectors.py.
 \end{enumerate}
 % I downloaded the \textsc{Closure} repository using "
 % \templateInstruction{defects4J command}
@@ -235,9 +237,10 @@ In the following sections, I report the results of the hyperparameter tuning for
     recall: 0.35
     f1: 0.43
 \end{lstlisting}
+The code for this step can be found in the following file: train\_classifiers.py.
 
 \section{Evaluation}
-In the las step, I used the best models for each of the classifiers saved in the previous part
+In the last step, I used the best models for each of the classifiers saved in the previous part
 and using those models performed 5 fold cross-validation on the whole dataset repeated 20 times. The results of the evaluation are as follows:
 
 \subsection{Output Distributions}
@@ -325,6 +328,7 @@ For every combination of two classifiers and every performance metric (precision
     \item Mean Recall for \textbf{MLP}: 0.325, Mean Recall for \textbf{Biased}: 1.000 $\Rightarrow$ Biased is better then MLP (p-value = 3.5552e-18).
     \item Mean Recall for \textbf{RF}: 0.403, Mean Recall for \textbf{Biased}: 1.000 $\Rightarrow$ Biased is better then RF (p-value = 2.8180e-18).
 \end{itemize}
+The code for this step can be found in the following file: evaluate\_classifiers.py.
 \subsection{Practical Usefulness}
 % \templateInstruction{Discuss the practical usefulness of the obtained classifiers in a realistic bug
 % prediction scenario (1 paragraph).}
