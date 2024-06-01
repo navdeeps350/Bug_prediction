@@ -83,6 +83,7 @@ grid_search_rf.fit(X_train, y_train)
 random_forest_classifier = grid_search_rf.best_estimator_
 
 # Best hyperparameters
+print('Best hyperparameters:')
 print('Decision Tree Classifier:')
 print(grid_search_dt.best_params_)
 print('Naive Bayes Classifier:')
@@ -95,6 +96,7 @@ print('Random Forest Classifier:')
 print(grid_search_rf.best_params_)
 
 # Accuracy for all classifiers
+print('Accuracy:')
 print('Decision Tree Classifier:', grid_search_dt.best_estimator_.score(X_test, y_test))
 print('Naive Bayes Classifier:', grid_search_NB.best_estimator_.score(X_test, y_test))
 print('SVM Classifier:', grid_search_svm.best_estimator_.score(X_test, y_test))
@@ -102,6 +104,7 @@ print('Neural Network Classifier:', grid_search_mlp.best_estimator_.score(X_test
 print('Random Forest Classifier:', grid_search_rf.best_estimator_.score(X_test, y_test))
 
 # Precision, Recall, F1 Score for all classifiers
+print('Precision, Recall, F1 Score:')
 print('Decision Tree Classifier:')
 y_pred_dtc = grid_search_dt.best_estimator_.predict(X_test)
 print(precision_recall_fscore_support(y_test, y_pred_dtc, average='binary'))

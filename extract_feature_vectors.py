@@ -131,8 +131,14 @@ if __name__ == '__main__':
     
     feature_result = feature_dictionary(feature_list)        
 
-    feature_frame = pd.DataFrame.from_dict(feature_result)
+    feature_frame = pd.DataFrame.from_dict(feature_result)    
 
     feature_frame.to_csv('results/feature_vectors.csv', index=False)
     print('Feature vectors extracted successfully! Check the file feature_vectors.csv in the results folder.')
+
+    ag_f = feature_frame.describe()
+    ag_f = ag_f.drop(['25%', '50%', '75%']).map(lambda x: round(x, 2))
+    print('The aggregated matrix of feature vectors is: ')
+    print(ag_f)
+
            

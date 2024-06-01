@@ -108,20 +108,21 @@ import matplotlib.pyplot as plt
 plt.boxplot([dtc_precision, nb_precision, svc_precision, mlp_precision, rf_precision, biased_classifier_precision])
 plt.xticks([1, 2, 3, 4, 5, 6], ['Decision Tree', 'Naive Bayes', 'SVM', 'Neural Network', 'Random Forest', 'Biased Classifier'], rotation=45, ha='right')
 plt.ylabel('Precision')
-plt.savefig('results/precision.png', bbox_inches='tight', dpi=300)
+plt.savefig('project_report/precision.png', bbox_inches='tight', dpi=300)
 plt.show()
 
 plt.boxplot([dtc_recall, nb_recall, svc_recall, mlp_recall, rf_recall, biased_classifier_recall])
 plt.xticks([1, 2, 3, 4, 5, 6], ['Decision Tree', 'Naive Bayes', 'SVM', 'Neural Network', 'Random Forest', 'Biased Classifier'], rotation=45, ha='right')
 plt.ylabel('Recall')
-plt.savefig('results/recall.png', bbox_inches='tight', dpi=300)
+plt.savefig('project_report/recall.png', bbox_inches='tight', dpi=300)
 plt.show()
 
 plt.boxplot([dtc_f1, nb_f1, svc_f1, mlp_f1, rf_f1, biased_classifier_f1])
 plt.xticks([1, 2, 3, 4, 5, 6], ['Decision Tree', 'Naive Bayes', 'SVM', 'Neural Network', 'Random Forest', 'Biased Classifier'], rotation=45, ha='right')
 plt.ylabel('F1')
-plt.savefig('results/f1.png', bbox_inches='tight', dpi=300)
+plt.savefig('project_report/f1.png', bbox_inches='tight', dpi=300)
 plt.show()
+print('Box plots saved in project_report folder')
 
 # Wilcoxon signed-rank test
 # p-values of pairwise comparisons of classifiers

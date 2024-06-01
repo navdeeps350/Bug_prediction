@@ -23,3 +23,4 @@ if __name__ == '__main__':
 
     feature_frame.to_csv('results/label_feature_vectors.csv', index=False)
     print('Labelled feature vectors saved to new_feature_vector.csv in the results folder.')
+    print(f'Total number of buggy classes: are {feature_frame['buggy'].sum()} and non-buggy classes are {len(feature_frame) - feature_frame['buggy'].sum()} out of {len(feature_frame)} classes.')
